@@ -1,0 +1,16 @@
+<h3>Search for photos of a user:</h3>
+
+<%= form_for :user, method: :get do |form| %>
+    <%= form.label :id, "User ID:" %>
+    <%= form.text_field :id %>
+    <%= form.submit "Search" %>
+<% end %>
+<br>
+
+<% if @photos_links %>
+    <% @photos_links.each do |link| %>
+        <div>
+            <%= image_tag(link) %>
+        </div>
+    <% end %>
+<% end %>
